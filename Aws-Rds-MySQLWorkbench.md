@@ -70,11 +70,11 @@ WHERE Id = 15;`
 `SELECT TOP 50 PERCENT * FROM mydb.Order;`
 
 Looks at all rows where name starts with a and ends with o.
-`SELECT * FROM mydb.Organization
+- `SELECT * FROM mydb.Organization
 WHERE Name LIKE 'a%o';`
 
 Looks at all rows where name has or in it.
-`SELECT * FROM mydb.Organization
+- `SELECT * FROM mydb.Organization
 WHERE CustomerName LIKE '%or%'`
 
 `SELECT SUM(SubtotalInDollars)
