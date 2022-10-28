@@ -66,3 +66,33 @@ WHERE CompletedCheckoutDatetime IS NOT NULL;`
 `UPDATE mydb.Event
 SET StartDateTime = '2022-11-06'
 WHERE Id = 15;`
+
+`SELECT TOP 50 PERCENT * FROM mydb.Order;`
+
+Looks at all rows where name starts with a and ends with o.
+`SELECT * FROM mydb.Organization
+WHERE Name LIKE 'a%o';`
+
+Looks at all rows where name has or in it.
+`SELECT * FROM mydb.Organization
+WHERE CustomerName LIKE '%or%'`
+
+`SELECT SUM(SubtotalInDollars)
+FROM mydb.Order;`
+
+`SELECT AVG(SubtotalInDollars)
+FROM mydb.Order;`
+
+`SELECT COUNT(CompletedCheckoutDatetime)
+FROM mydb.Order;`
+
+`SELECT COUNT(CompletedCheckoutDatetime)
+FROM mydb.Order
+WHERE IsShipped = 1;`
+
+`SELECT MAX(Quantity) AS LargestPurchase
+FROM mydb.ProductOrder; `
+
+`SELECT MIN(Quantity) AS SmallestPurchase
+FROM mydb.ProductOrder; `
+
