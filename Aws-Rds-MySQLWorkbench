@@ -1,7 +1,10 @@
 # Connect to my Amazon RDS for MySQL instance by using MySQL Workbench
 
 
-1. Download and install MySQL Workbench.
+1. Download and install MySQL & MySQL Workbench.
+   - [Windows](https://www.youtube.com/watch?v=wjTdEPvolzk)
+   - [Mac](https://www.youtube.com/watch?v=DVVVSlGDpuw)
+   - [Brew Install](https://www.youtube.com/watch?v=1K4m6m5y9Oo)
 2. Open MySQL Workbench, and then choose the ⊕ sign beside MySQL Connections to set up a new connection.
 3. In the Setup New Connection dialog box, enter a name for your connection.
 4. In the Parameters section, enter these details:
