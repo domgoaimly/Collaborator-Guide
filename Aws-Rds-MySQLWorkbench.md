@@ -1,16 +1,40 @@
-# Amazon RDS & MySQL
-
 ## Connect to my Amazon RDS for MySQL instance by using MySQL Workbench
 
 1. Download and install MySQL & MySQL Workbench.
    - [Windows](https://www.youtube.com/watch?v=wjTdEPvolzk)
    - [Mac](https://www.youtube.com/watch?v=DVVVSlGDpuw)
    - [Brew Install](https://www.youtube.com/watch?v=1K4m6m5y9Oo)
+
+## Setup for public accessible RDS
+
+_The staging database is public_
+
 2. Open MySQL Workbench, and then choose the ⊕ sign beside MySQL Connections to set up a new connection.
 <img width="1205" alt="mysqlconnection" src="https://user-images.githubusercontent.com/111775505/198582412-3bdb57a4-8283-4082-adc3-89eecb3047fd.png">
 
-4. In the Setup New Connection dialog box, enter a name for your connection.
-5. In the Parameters section, enter these details:
+3. In the Setup New Connection dialog box, enter a name for your connection.
+4. In the Parameters section, enter these details:
+   - Host name: Enter the RDS endpoint
+   - Port: Enter the Port number
+   - Username: Enter the primary user
+
+## Setup for private accessible RDS
+
+_The production database is private_
+
+2. Open MySQL Workbench, and then choose the ⊕ sign beside MySQL Connections to set up a new connection.
+<img width="1164" alt="Screen Shot 2022-11-12 at 3 50 03 PM" src="https://user-images.githubusercontent.com/111775505/201496040-cdf2778d-82e6-4016-8d92-84dc7b3d990c.png">
+
+3. In the Setup New Connection dialog box, enter a name for your connection.
+4. In the Parameters section, enter these details:
+   - SSH Hostname: Enter the Hostname (View the hostname in the image)
+   - SSH Username: Enter ec2-user as the user name
+   - SSH Password: 
+     - Login to AWS console
+     - Click S3 bucket
+     - Find bucket name [keyexchance](https://s3.console.aws.amazon.com/s3/buckets/keyexchance?region=us-east-2)
+     - Within the bucket click the download 
+     - After the file is downloaded point your SSH Key File to that file
    - Host name: Enter the RDS endpoint
    - Port: Enter the Port number
    - Username: Enter the primary user
@@ -62,37 +86,3 @@ ORDER BY StartDateTime;`
 
 `SELECT * FROM mydb.Order
 WHERE CompletedCheckoutDatetime IS NOT NULL;`
-
-`UPDATE mydb.Event
-SET StartDateTime = '2022-11-06'
-WHERE Id = 15;`
-
-`SELECT TOP 50 PERCENT * FROM mydb.Order;`
-
-Looks at all rows where name starts with a and ends with o.
-- `SELECT * FROM mydb.Organization
-WHERE Name LIKE 'a%o';`
-
-Looks at all rows where name has or in it.
-- `SELECT * FROM mydb.Organization
-WHERE CustomerName LIKE '%or%'`
-
-`SELECT SUM(SubtotalInDollars)
-FROM mydb.Order;`
-
-`SELECT AVG(SubtotalInDollars)
-FROM mydb.Order;`
-
-`SELECT COUNT(CompletedCheckoutDatetime)
-FROM mydb.Order;`
-
-`SELECT COUNT(CompletedCheckoutDatetime)
-FROM mydb.Order
-WHERE IsShipped = 1;`
-
-`SELECT MAX(Quantity) AS LargestPurchase
-FROM mydb.ProductOrder; `
-
-`SELECT MIN(Quantity) AS SmallestPurchase
-FROM mydb.ProductOrder; `
-
