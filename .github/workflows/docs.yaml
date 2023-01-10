@@ -1,15 +1,3 @@
-pages:
-  stage: deploy
-  script:
-    - mkdir .public
-    - cp -r docs/. public
-    - mv .public public
-  artifacts:
-    paths:
-      - public
-  only:
-    - master
-
 name: Build and Deploy Github Pages
 on:
   push:
