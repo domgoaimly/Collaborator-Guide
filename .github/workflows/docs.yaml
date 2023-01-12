@@ -23,17 +23,17 @@ jobs:
     steps:
       - name: Checkout Install & Build
       - uses: actions/checkout@v3
-        run: |
-          cd docs/
-          mkdir .build
-          cp -r * .build
-          mv .build build
+        # run: |
+        #   cd docs/
+        #   mkdir .build
+        #   cp -r * .build
+        #   mv .build build
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "."
+          path: "./docs/public"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
