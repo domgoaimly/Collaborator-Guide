@@ -8,6 +8,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  workflow_run:
+    workflows: [verify]
+    types:
+      - completed
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -34,5 +39,6 @@ jobs:
         with:
           path: "./docs"
       - name: Deploy to GitHub Pages
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         id: deployment
         uses: actions/deploy-pages@v1

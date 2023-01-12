@@ -2,8 +2,9 @@
 
 Tech guides serve as a collection of documents to help software engineering, and web development topics. 
 
+[Docs](https://domgoaimly.github.io/Tech-Guides/#/)
 ### Future Enhancements
-- [ ] Deploy Docs w/Github Actions
+- [X] Deploy Docs w/Github Actions
   - [ ] Containerize w/Docker
 - [ ] Create Express Typescript BE
   - [ ] Create unit tests with Jest
