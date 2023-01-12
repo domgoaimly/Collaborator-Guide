@@ -1,5 +1,7 @@
 name: Build and Deploy Github Pages
 on:
+  # Compare the preceeding commit of main -> to the current commit of the main branch.
+  # (Note: To compare changes between the last pushed commit to the remote main branch set `since_last_remote_commit: true`)
   push:
     branches:
       - main
@@ -15,6 +17,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  verify:
+    runs-on: ubuntu-latest # windows-latest | macos-latest
+    name: Test changed-files
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # OR "2" -> To retrieve the preceding commit.
+
+      - name: Get changed files in the docs folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            docs/**
+
+      - name: Run step if any file(s) in the docs folder change
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
+        run: |
+          echo "One or more files in the docs folder has changed."
+          echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.all_changed_files }}"
+
   build-and-deploy:
     environment:
       name: github-pages
