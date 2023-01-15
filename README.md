@@ -1,8 +1,8 @@
 # Tech-Guides
 
-![Build Docs](https://github.com/domgoaimly/Tech-Guides/actions/workflows/build-docs.yml/badge.svg?branch=feature/docify)
-![Release](https://github.com/domgoaimly/Tech-Guides/actions/workflows/release.yml/badge.svg?branch=feature/docify)
-![Verify Changes](https://github.com/domgoaimly/Tech-Guides/actions/workflows/verify.yml/badge.svg?branch=feature/docify)
+![Build Docs](https://github.com/domgoaimly/Tech-Guides/actions/workflows/build-docs.yaml/badge.svg?branch=feature/docify)
+![Release](https://github.com/domgoaimly/Tech-Guides/actions/workflows/release.yaml/badge.svg?branch=feature/docify)
+![Verify Changes](https://github.com/domgoaimly/Tech-Guides/actions/workflows/verify.yaml/badge.svg?branch=feature/docify)
 
 Tech guides serve as a collection of documents to help software engineering, and web development topics. 
 
