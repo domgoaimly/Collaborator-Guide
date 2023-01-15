@@ -1,4 +1,4 @@
-name: CI
+name: Verify Changes
 
 on:
   # Compare the last commit of main -> to the current commit of a PR branch.
