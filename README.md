@@ -1,8 +1,13 @@
 # Tech-Guides
 
+![Build Docs](https://github.com/domgoaimly/Tech-Guides/actions/workflows/build-docs.yml/badge.svg?branch=feature/docify)
+![Release](https://github.com/domgoaimly/Tech-Guides/actions/workflows/release.yml/badge.svg?branch=feature/docify)
+![Verify Changes](https://github.com/domgoaimly/Tech-Guides/actions/workflows/verify.yml/badge.svg?branch=feature/docify)
+
 Tech guides serve as a collection of documents to help software engineering, and web development topics. 
 
-[Docs](https://domgoaimly.github.io/Tech-Guides/#/)
+[View Docs](https://domgoaimly.github.io/Tech-Guides/#/)
+
 ### Future Enhancements
 - [X] Deploy Docs w/Github Actions
   - [ ] Containerize w/Docker
