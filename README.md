@@ -33,3 +33,4 @@ Tech guides serve as a collection of documents to help software engineering, and
 - [ ] Deploy BE Server testing w/ECS
   - [ ] Setup Cloudwatch Dashboard && Alerting
   - [ ] Containerize w/Docker
+- [ ] Create a template
